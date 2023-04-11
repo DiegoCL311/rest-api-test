@@ -7,6 +7,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import router from "./router";
 
+require('dotenv').config()
+
 const app = express();
 app.use(
   cors({
@@ -24,8 +26,7 @@ server.listen(8080, () => {
   console.log("Server started on port 8080");
 });
 
-const MONGO_URL =
-  "mongodb+srv://311:YHDb6uSkzAKgJANC@cluster0.c22j2nr.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.Promise = global.Promise;
 mongoose.connection.on("connected", () => {

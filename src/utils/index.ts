@@ -1,5 +1,5 @@
 import crypto from "crypto";
-const SECRET = "MIUBGF$Y%U%UYIUJD12121";
+const SECRET = process.env.SECRET;
 
 export const random = () => crypto.randomBytes(128).toString("base64");
 
